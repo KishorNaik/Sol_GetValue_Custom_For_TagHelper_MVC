@@ -1,0 +1,15 @@
+﻿@model Sol_Demo.TagHelpers.DemoTagHelper
+
+    <div>
+        <h1>Input Values : @(Model.InputValue.Model as string)</h1>
+        <div id="divOutputValue" style="border: 2px solid red">
+            <h3>Click on div Tag</h3>
+
+        </div>
+
+
+        @*if you want to get value from Tag Helper always bind two properties
+        name & asp-for using hidden Value*@
+        <input id="hidOutput" name="@Model.OutputValue.Name" type="hidden" asp-for="@Model.OutputValue.Model" />
+        <input id="hidInput" name="@Model.InputValue.Name" type="hidden" asp-for="@Model.InputValue.Model" />
+    </div>

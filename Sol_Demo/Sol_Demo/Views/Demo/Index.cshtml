@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model Sol_Demo.Models.MyModel
+
+<form asp-controller="Demo" asp-action="OnSubmit">
+
+    <input id="txtInput" type="text" asp-for="@Model.InputValue" />
+
+
+    <my-tag input-value="@Model.InputValue" output-value="@Model.OutputValue"></my-tag>
+    <input type="submit" class="btn btn-danger" value="Submit" />
+
+
+    
+</form>
+
+@section Scripts{ 
+
+    @{ 
+        await Html.RenderPartialAsync("~/Views/Shared/_DemoJavascriptPartialView.cshtml");
+    }
+
+   
+}
